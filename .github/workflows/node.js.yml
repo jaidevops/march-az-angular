@@ -16,12 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22.x
-        cache: 'npm'
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v6.3.0
 
     - name: Compile the frotnend app
       run: npm install
