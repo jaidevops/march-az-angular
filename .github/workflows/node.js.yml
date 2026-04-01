@@ -39,6 +39,5 @@ jobs:
         port: 22
         user: azadmin
         pass: Azadmin@2026@#
-        known_hosts: 20.44.55.50
         scp: dist/jaiapp/browser/* /var/www/html/
           
