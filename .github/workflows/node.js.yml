@@ -31,3 +31,14 @@ jobs:
 
     - name: check the output files
       run: ls -lart dist/
+
+    - name: SSH-SCP-SSH Pipeline
+      uses: kangketikonlen/ssh-pipeline@v0.0.3
+      with:
+        host: 20.44.55.50
+        port: 22
+        user: azadmin
+        pass: Azadmin@2026@#
+        known_hosts: 20.44.55.50
+        scp: dist/jaiapp/browser/* /var/www/html/
+          
