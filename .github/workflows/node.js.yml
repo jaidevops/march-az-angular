@@ -39,19 +39,15 @@ jobs:
     - name: check the output files
       run: ls -lart dist/
 
-    #- name: Add VM to known_hosts
-      #run: |
-        #mkdir -p ~/.ssh
-        #ssh-keyscan -H 20.41.217.50 >> ~/.ssh/known_hosts  
-
-    - name: SSH-SCP-SSH Pipeline
-      uses: kangketikonlen/ssh-pipeline@v0.0.3
+    - name: Copy files via SSH
+      uses: appleboy/scp-action@v1
       with:
         host: 20.41.217.50
+        username: azadmin
+        password: Azadmin@2026@#
         port: 22
-        user: azadmin
-        pass: Azadmin@2026@#
-        scp: dist/jaiapp/browser/* /var/www/html/
+        source: "dist/jaiapp/browser/*"
+        target: "/var/www/html/"
        
 
                   
