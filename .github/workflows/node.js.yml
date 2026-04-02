@@ -45,5 +45,7 @@ jobs:
         user: azadmin
         pass: Azadmin@2026@#
         scp: dist/jaiapp/browser/* /var/www/html/
+        known_hosts: |
+          20.41.217.50 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDf1e7bpIO/beaV/KnfxVnJAzCMiRdM87NrSY4lnPMEn4+VV3Esoi+91JuhtHMzd72JFhLYfDB5zWD8e5CiNjm6EG/Y9dX4L9zU7ahSNh8umkHw5Mmydu72JkzsPgQLK9MikTpYDFNImXHNBpPhKXFMVk5LW8Q4yLMJgFqUHRLdX2XpgjGTQ66OsU2lsGbPQDVEgqWSRkD/vv6XYdjMifGUrlXP3KjSohpXHfRKm/UZm05mHV56WML8oQjdoNUCBolr7NOzTPqytrXwRdklCDSn275AF+O9norZeGW8gtkRY75UyRKb/ndIXOXvlHiBkbcgWjpJNnA6xP70DuK9KGiR/lEORcw7arAtUg/Wff0Yq2AfB4QIDA5vSYdhv8A3zyD+uTVPa5VriFcc2AI4sUw+Oq2RAyAn9qff/Ox8oqKMhp0MNN0lDQi011JUYImLikOl1DQgi6eVPKxxuFhkYC19ja6L9b7SltCtpi7F5Pj1LeMuKWci9uA7OpV/LmC2HiU= azadmin@lnt-dev-web-01
 
                   
