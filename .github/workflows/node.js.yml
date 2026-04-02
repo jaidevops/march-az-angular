@@ -35,9 +35,10 @@ jobs:
     - name: SSH-SCP-SSH Pipeline
       uses: kangketikonlen/ssh-pipeline@v0.0.3
       with:
-        host: 20.44.55.50
+        host: 20.41.217.50
         port: 22
         user: azadmin
         pass: Azadmin@2026@#
         scp: dist/jaiapp/browser/* /var/www/html/
-          
+
+                  
