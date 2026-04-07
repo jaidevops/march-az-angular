@@ -17,3 +17,5 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  pool:
+    name: "projects/refined-gravity-333516/locations/asia-south1/workerPools/agent1"
