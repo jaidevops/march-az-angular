@@ -1,0 +1,19 @@
+steps:
+  # Install dependencies
+  - name: 'node:18'
+    entrypoint: 'npm'
+    args: ['install']
+
+  # Build Angular app
+  - name: 'node:18'
+    entrypoint: 'npm'
+    args: ['run', 'build', '--', '--configuration=production']
+
+# Store build output
+#artifacts:
+  #objects:
+    #location: 'gs://YOUR_BUCKET_NAME/angular-build/'
+    #paths: ['dist/**']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
