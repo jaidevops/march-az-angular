@@ -21,25 +21,21 @@ on:
           - debug  
 
 jobs:
-  build:
-
-    runs-on: agent1
-
+  
+  Integration:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-
     - name: Setup Node.js environment
       uses: actions/setup-node@v6.3.0
       with:
         node-version: '22.12'
         cache: 'npm'
-
     - name: Install angular CLI
       run: npm install -g @angular/cli
       
-
     - name: Compile the frotnend app
-      run: npm install
+      run: npm install     
 
     - name: Execute the unit test cases
       run: npm run test
@@ -50,6 +46,12 @@ jobs:
     - name: check the output files
       run: ls -lart dist/
 
+
+  Deployment:
+    runs-on: ubuntu-22.04
+    #needs: Integration
+    steps:
+    - uses: actions/checkout@v4    
     - name: Copy files via SSH
       uses: appleboy/scp-action@v1
       with:
