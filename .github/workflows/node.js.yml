@@ -44,7 +44,7 @@ jobs:
       run: npm run build
 
     - name: check the output files
-      run: ls -lart dist/
+      run: ls -lart ${{ vars.application_path }}
 
 
   Deployment:
@@ -56,10 +56,10 @@ jobs:
       uses: appleboy/scp-action@v1
       with:
         host: 20.41.217.50
-        username: azadmin
-        password: Azadmin@2026@#
+        username: ${{ secrets.vm_username }}
+        password: ${{ secrets.vm_password }}
         port: 22
-        source: "dist/jaiapp/browser/*"
+        source: "${{ vars.application_path }}/jaiapp/browser/*"
         target: "/var/www/html/"
        
 
