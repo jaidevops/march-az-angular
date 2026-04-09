@@ -5,9 +5,20 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop", "qua", "uat" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop", "qua", "uat" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug  
 
 jobs:
   build:
