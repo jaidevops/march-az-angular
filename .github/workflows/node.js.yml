@@ -49,7 +49,7 @@ jobs:
 
   Deployment:
     runs-on: ubuntu-22.04
-    #needs: Integration
+    needs: Integration
     steps:
     - uses: actions/checkout@v4    
     - name: Copy files via SSH
