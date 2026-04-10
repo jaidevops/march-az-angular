@@ -65,7 +65,7 @@ jobs:
     - name: check the files
       run: |
         ls -lart
-        ls -lart ${{ vars.application_path }}/jaiapp/browser/
+        ls -lart jaiapp/browser/
     - name: Copy files via SSH
       uses: appleboy/scp-action@v1
       with:
@@ -73,7 +73,7 @@ jobs:
         username: ${{ secrets.vm_username }}
         password: ${{ secrets.vm_password }}
         port: 22
-        source: "${{ vars.application_path }}/jaiapp/browser/*"
+        source: "jaiapp/browser/*"
         target: "/var/www/html/"
        
 
