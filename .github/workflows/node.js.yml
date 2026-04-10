@@ -46,12 +46,26 @@ jobs:
     - name: check the output files
       run: ls -lart ${{ vars.application_path }}
 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: App-output
+        path: dist
+
 
   Deployment:
     runs-on: ubuntu-22.04
     needs: Integration
     steps:
-    - uses: actions/checkout@v4    
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: App-output
+
+    - name: check the files
+      run: |
+        ls -lart
+        ls -lart ${{ vars.application_path }}/jaiapp/browser/
     - name: Copy files via SSH
       uses: appleboy/scp-action@v1
       with:
