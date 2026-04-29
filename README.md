@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
 
-## Development server
+## Development server ## for the service
 
 To start a local development server, run:
 
@@ -52,6 +52,8 @@ For end-to-end (e2e) testing, run:
 ng e2e
 ```
 
+
+## New changes with the code
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
