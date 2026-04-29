@@ -66,15 +66,15 @@ jobs:
       run: |
         ls -lart
         ls -lart jaiapp/browser/
-    - name: Copy files via SSH
-      uses: appleboy/scp-action@v1
-      with:
-        host: 20.41.217.50
-        username: ${{ secrets.vm_username }}
-        password: ${{ secrets.vm_password }}
-        port: 22
-        source: "jaiapp/browser/*"
-        target: "/var/www/html/"
+    #- name: Copy files via SSH
+      #uses: appleboy/scp-action@v1
+      #with:
+        #host: 20.41.217.50
+        #username: ${{ secrets.vm_username }}
+        #password: ${{ secrets.vm_password }}
+        #port: 22
+        #source: "jaiapp/browser/*"
+        #target: "/var/www/html/"
        
 
                   
