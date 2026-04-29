@@ -61,6 +61,6 @@ jobs:
         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_MUD_099819200 }}
         repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
         action: "upload"
-        app_location: "/"              # since artifact is already built
-        output_location: "dist/jaiapp/browser"    
+        app_location: "dist/jaiapp"
+        skip_app_build: true
         
