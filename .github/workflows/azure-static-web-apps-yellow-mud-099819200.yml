@@ -56,8 +56,15 @@ jobs:
         ls -lart
         ls -lart jaiapp/browser/
 
+    - name: login into dockerhub
+      run: |
+        docker login -u ${{ secrets.username }} -p ${{ secrets.pswd }}
+
     - name: Docker build image
-      run: docker build -t jai/app:latest .    
+      run: docker build -t jaiarch/march2026fr:latest .
+      
+    - name: docker image push
+      run: docker push jaiarch/march2026fr:latest
 
     #- name: Deploy to Azure Static Web Apps
       #uses: Azure/static-web-apps-deploy@v1
