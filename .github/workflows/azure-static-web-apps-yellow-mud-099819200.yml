@@ -55,12 +55,15 @@ jobs:
         ls -lart
         ls -lart jaiapp/browser/
 
-    - name: Deploy to Azure Static Web Apps
-      uses: Azure/static-web-apps-deploy@v1
-      with:
-        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_MUD_099819200 }}
-        repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-        action: "upload"
-        app_location: "jaiapp/browser"
-        skip_app_build: true
+    - name: Docker build image
+      run: docker build -t jai/app:latest .    
+
+    #- name: Deploy to Azure Static Web Apps
+      #uses: Azure/static-web-apps-deploy@v1
+      #with:
+        #azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_MUD_099819200 }}
+        #repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+        #action: "upload"
+        #app_location: "jaiapp/browser"
+        #skip_app_build: true
         
