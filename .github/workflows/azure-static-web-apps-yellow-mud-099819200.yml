@@ -56,6 +56,8 @@ jobs:
         ls -lart
         ls -lart jaiapp/browser/
 
+  ############################# Docker hub login ######################################      
+
     - name: login into dockerhub
       run: |
         docker login -u ${{ secrets.username }} -p ${{ secrets.pswd }}
@@ -65,6 +67,20 @@ jobs:
       
     - name: docker image push
       run: docker push jaiarch/march2026fr:latest
+
+  ####################################### Azure cli and acr login #########################
+
+    - name: az & acr login
+      run: |
+        az login --service-principal --username ${{ secrets.client_id }} --password ${{ secrets.client_secret }} --tenant ${{ secrets.tenant_id }}
+        az acr login --name jaivirat
+
+    - name: Docker build image
+      run: docker build -t jaivirat.azurecr.io/frontend:latest .
+      
+    - name: docker image push
+      run: docker push jaivirat.azurecr.io/frontend:latest
+        
 
     #- name: Deploy to Azure Static Web Apps
       #uses: Azure/static-web-apps-deploy@v1
