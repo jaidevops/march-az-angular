@@ -84,12 +84,16 @@ jobs:
 
  ######################################## Deploy web app container #####################################
 
+    #- name: az webapp deploy
+      #run: |
+        #az containerapp up --name jaiwebapp1 --image jaivirat.azurecr.io/azfrontendrepo:latest --resource-group lnt-dev-finops-compute-01 --ingress external --target-port 80
+
+
     - name: az webapp deploy
       run: |
-        az containerapp up --name jaiwebapp1 --image jaivirat.azurecr.io/azfrontendrepo:latest --resource-group lnt-dev-finops-compute-01 --ingress external --target-port 80
-
-
-
+        az webapp config container set --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01 --docker-custom-image-name jaivirat.azurecr.io/azfrontendrepo:latest --docker-registry-server-url https://jaivirat.azurecr.io
+        az webapp deployment container show-cd-url --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01
+        az webapp restart --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01
 
     #- name: Deploy to Azure Static Web Apps
       #uses: Azure/static-web-apps-deploy@v1
