@@ -91,7 +91,7 @@ jobs:
 
     - name: az webapp deploy
       run: |
-        az webapp config container set --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01 --docker-custom-image-name jaivirat.azurecr.io/azfrontendrepo:latest --docker-registry-server-url https://jaivirat.azurecr.io
+        az webapp config container set --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01 --container-image-name jaivirat.azurecr.io/azfrontendrepo:latest --container-registry-url https://jaivirat.azurecr.io
         az webapp deployment container show-cd-url --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01
         az webapp restart --name jaiwebapp1 --resource-group lnt-dev-finops-compute-01
 
