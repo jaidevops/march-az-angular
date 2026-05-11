@@ -104,3 +104,27 @@ jobs:
         #app_location: "jaiapp/browser"
         #skip_app_build: true
         
+#################################################### Virtual machine deployment #####################
+
+    #- name: Copy files via SSH
+      #uses: appleboy/scp-action@v1
+      #with:
+        #host: 20.41.217.50
+        #username: ${{ secrets.vm_username }}
+        #password: ${{ secrets.vm_password }}
+        #port: 22
+        #source: "templates/docker-compose.yml"
+        #target: "/tmp/"
+
+
+     #- name: Deployment
+      #uses: appleboy/ssh-action@v1
+      #with:
+        #host: 20.41.217.50
+        #username: ${{ secrets.vm_username }}
+        #password: ${{ secrets.vm_password }}
+        #port: 22
+        #script: |
+            #chmod +x /tmp/docker-compose.yml
+            #cd /tmp/
+            #docker compose up -d --no-deps wordpress
